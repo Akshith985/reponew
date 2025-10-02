@@ -1,12 +1,17 @@
+'use client';
+
 import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
-import { PlaceHolderImages } from '@/lib/placeholder-images';
-import { ChevronRight } from 'lucide-react';
-import { Progress } from "@/components/ui/progress"
+import { ChevronRight, User, Code } from 'lucide-react';
+import { Progress } from "@/components/ui/progress";
+import { useState } from 'react';
+import { cn } from '@/lib/utils';
+import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
+import { Label } from '@/components/ui/label';
 
 export default function Hero() {
-  const heroImage = PlaceHolderImages.find((img) => img.id === 'hero-portrait');
+  const [viewerType, setViewerType] = useState('developer');
 
   return (
     <section id="about" className="bg-card">
@@ -22,13 +27,30 @@ export default function Hero() {
                 className="object-cover"
             />
           </div>
-          <div className='w-full max-w-sm space-y-2'>
-              <div className='flex justify-between text-sm font-semibold text-muted-foreground'>
-                  <span>Level 1</span>
-                  <span>Explorer</span>
-                  <span>XP: 15/100</span>
+          <div className='w-full max-w-sm space-y-4'>
+              <div className='space-y-2'>
+                <div className='flex justify-between text-sm font-semibold text-muted-foreground'>
+                    <span>Level 1</span>
+                    <span>Explorer</span>
+                    <span>XP: 15/100</span>
+                </div>
+                <Progress value={15} className='h-3' />
               </div>
-              <Progress value={15} className='h-3' />
+              <div className="text-center">
+                  <p className="text-sm font-semibold mb-3">Who's viewing?</p>
+                  <RadioGroup defaultValue="developer" className="flex justify-center gap-4" onValueChange={setViewerType}>
+                      <Label htmlFor="developer" className={cn("flex flex-col items-center gap-2 rounded-lg border-2 p-4 cursor-pointer transition-all", viewerType === 'developer' ? 'bg-primary/20 border-primary' : 'border-border')}>
+                          <RadioGroupItem value="developer" id="developer" className="sr-only" />
+                          <Code className="h-6 w-6" />
+                          <span>Developer</span>
+                      </Label>
+                      <Label htmlFor="recruiter" className={cn("flex flex-col items-center gap-2 rounded-lg border-2 p-4 cursor-pointer transition-all", viewerType === 'recruiter' ? 'bg-primary/20 border-primary' : 'border-border')}>
+                           <RadioGroupItem value="recruiter" id="recruiter" className="sr-only" />
+                           <User className="h-6 w-6" />
+                           <span>Recruiter</span>
+                      </Label>
+                  </RadioGroup>
+              </div>
           </div>
         </div>
         <div className="space-y-6 text-center md:text-left">
