@@ -1,49 +1,63 @@
+
 'use client';
 
-import { z } from 'zod';
-import { useForm } from 'react-hook-form';
-import { zodResolver } from '@hookform/resolvers/zod';
+import React from 'react';
 import { useToast } from '@/hooks/use-toast';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
-import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
 import { Loader2 } from 'lucide-react';
-import { sendEmail } from '@/app/send-email-action';
-
-const formSchema = z.object({
-  name: z.string().min(2, 'Name must be at least 2 characters.'),
-  email: z.string().email('Please enter a valid email address.'),
-  message: z.string().min(10, 'Message must be at least 10 characters.'),
-});
-
-type FormData = z.infer<typeof formSchema>;
+import { Label } from '@/components/ui/label';
 
 export default function Contact() {
   const { toast } = useToast();
-  const form = useForm<FormData>({
-    resolver: zodResolver(formSchema),
-    defaultValues: {
-      name: '',
-      email: '',
-      message: '',
-    },
-  });
+  const [result, setResult] = React.useState('');
+  const [isSubmitting, setIsSubmitting] = React.useState(false);
 
-  const onSubmit = async (data: FormData) => {
+  const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    setIsSubmitting(true);
+    setResult('Sending....');
+    const formData = new FormData(event.target as HTMLFormElement);
+
+    formData.append('access_key', '1f153213-9425-4ba4-bc00-95a81500f0b1');
+
     try {
-      await sendEmail(data);
-      toast({
-        title: 'Message Sent!',
-        description: "Thanks for reaching out. I'll get back to you soon.",
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: formData,
       });
-      form.reset();
+
+      const data = await response.json();
+
+      if (data.success) {
+        setResult('Form Submitted Successfully');
+        toast({
+          title: 'Message Sent!',
+          description: "Thanks for reaching out. I'll get back to you soon.",
+        });
+        (event.target as HTMLFormElement).reset();
+      } else {
+        console.log('Error', data);
+        setResult(data.message);
+        toast({
+          variant: 'destructive',
+          title: 'Uh oh! Something went wrong.',
+          description:
+            data.message ||
+            'There was a problem sending your message. Please try again later.',
+        });
+      }
     } catch (error) {
-       toast({
-        variant: "destructive",
+      console.error('Submission error:', error);
+      setResult('An error occurred.');
+      toast({
+        variant: 'destructive',
         title: 'Uh oh! Something went wrong.',
-        description: "There was a problem sending your message. Please try again later.",
+        description: 'There was a problem sending your message. Please try again later.',
       });
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -57,55 +71,26 @@ export default function Contact() {
           </p>
         </div>
         <div className="max-w-2xl mx-auto">
-          <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-              <FormField
-                control={form.control}
-                name="name"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Name</FormLabel>
-                    <FormControl>
-                      <Input placeholder="Your Name" {...field} />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-              <FormField
-                control={form.control}
-                name="email"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Email</FormLabel>
-                    <FormControl>
-                      <Input type="email" placeholder="your@email.com" {...field} />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-              <FormField
-                control={form.control}
-                name="message"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Message</FormLabel>
-                    <FormControl>
-                      <Textarea placeholder="Your message..." {...field} rows={5} />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-              <div className="text-center">
-                <Button type="submit" size="lg" disabled={form.formState.isSubmitting}>
-                   {form.formState.isSubmitting && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
-                  Send Message
-                </Button>
-              </div>
-            </form>
-          </Form>
+          <form onSubmit={onSubmit} className="space-y-6">
+            <div className="space-y-2">
+              <Label htmlFor="name">Name</Label>
+              <Input id="name" type="text" name="name" placeholder="Your Name" required />
+            </div>
+            <div className="space-y-2">
+              <Label htmlFor="email">Email</Label>
+              <Input id="email" type="email" name="email" placeholder="your@email.com" required />
+            </div>
+            <div className="space-y-2">
+              <Label htmlFor="message">Message</Label>
+              <Textarea id="message" name="message" placeholder="Your message..." rows={5} required />
+            </div>
+            <div className="text-center">
+              <Button type="submit" size="lg" disabled={isSubmitting}>
+                {isSubmitting && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
+                Send Message
+              </Button>
+            </div>
+          </form>
         </div>
       </div>
     </section>
