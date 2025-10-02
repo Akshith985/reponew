@@ -40,7 +40,7 @@ export default function SplashScreen() {
       )}
     >
       {showWelcome ? (
-        <div className="flex flex-col items-center justify-center">
+        <div className="flex flex-col items-center justify-center text-center">
             <Image 
                 src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExcXdod3o1NjA1NWNka2hsNTU4bzkyNW1xNzRneWoyZ3g5bzB6MGtpbyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/EQq9KlEXpsDQsGn0tl/giphy.gif"
                 alt="Welcome GIF"
@@ -48,6 +48,7 @@ export default function SplashScreen() {
                 height={300}
                 unoptimized
             />
+            <h1 className="text-4xl font-bold font-headline mt-4">Welcome!</h1>
         </div>
       ) : (
         <div className="text-center space-y-8 max-w-lg mx-auto p-4 animate-in fade-in duration-500">
