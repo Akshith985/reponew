@@ -42,7 +42,7 @@ export default function SplashScreen() {
       {showWelcome ? (
         <div className="flex flex-col items-center justify-center text-center">
             <Image 
-                src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExcjR2cm1vYnRlNTdjcGZ1dmh6c29ndjc4ZHdmdmZmdnR3cmxqa3h2diZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/T6QT8wrFwpybcSpniI/giphy.gif"
+                src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExMzBjdHUzenI0OWI0YzFrcnRtNWFqOGd2b3JocXdpemxqYjlrMmZieCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/2fZufNPmTkaQiytRE3/giphy.gif"
                 alt="Welcome GIF"
                 width={300}
                 height={300}
