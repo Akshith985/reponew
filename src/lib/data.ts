@@ -1,3 +1,4 @@
+
 import { Code, Server, Database, Box, PenTool, Layers, type LucideIcon, Milestone, BookUser, Link2 } from 'lucide-react';
 import type { StaticImageData } from 'next/image';
 
@@ -42,7 +43,7 @@ export const projects: Project[] = [
       url: 'https://picsum.photos/seed/mental-health-app/600/400',
       hint: 'calm meditation'
     },
-    link: 'https://njjuouio.netlify.app/',
+    link: 'https://studio-lovat-kappa-36.vercel.app/',
     tags: ['React Native', 'Node.js', 'MongoDB', 'Firebase'],
   },
   {
