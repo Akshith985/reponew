@@ -5,7 +5,6 @@ import Hero from '@/components/sections/hero';
 import Projects from '@/components/sections/projects';
 import Skills from '@/components/sections/skills';
 import FavoriteBug from '@/components/sections/favorite-bug';
-import Contact from '@/components/sections/contact';
 import Footer from '@/components/footer';
 import SplashScreen from '@/components/splash-screen';
 import { useViewer } from '@/context/viewer-context';
@@ -26,7 +25,6 @@ export default function Home() {
         {viewerType === 'developer' ? <CodePlayground /> : <Projects />}
         <Skills />
         {viewerType === 'developer' && <FavoriteBug />}
-        <Contact />
       </main>
       <Footer />
     </>

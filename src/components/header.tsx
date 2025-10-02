@@ -19,7 +19,6 @@ export default function Header() {
     ...(viewerType === 'developer'
       ? [{ href: '#favorite-bug', label: 'Favorite Bug' }]
       : []),
-    { href: '#contact', label: 'Contact' },
   ];
 
   return (
