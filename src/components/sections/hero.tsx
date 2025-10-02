@@ -63,6 +63,9 @@ export default function Hero() {
                 </div>
                 <Progress value={50} className='h-3' />
                 <p className="text-xs text-center text-muted-foreground italic">"Always Exploring!"</p>
+                <p className="text-xs text-center text-muted-foreground pt-2">
+                  <span className="font-bold">PS:</span> When I’m away from my screen, you can find me sketching new worlds, writing stories, or helping shelter pets find their forever homes—it’s all about creating joy and connection.
+                </p>
               </div>
           </div>
         </div>
