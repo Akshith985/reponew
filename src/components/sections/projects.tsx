@@ -42,7 +42,7 @@ export default function Projects() {
                   ))}
                 </div>
                 <Button asChild variant="link" className="px-0">
-                  <Link href={project.link}>
+                  <Link href={project.link} target="_blank">
                     View Project <ArrowRight className="ml-2 h-4 w-4" />
                   </Link>
                 </Button>

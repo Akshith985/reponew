@@ -11,19 +11,25 @@ export default function Hero() {
     <section id="about" className="bg-card">
       <div className="container grid md:grid-cols-2 gap-10 items-center">
         <div className="flex justify-center">
-          <div className="w-[450px] h-[450px] rounded-full aspect-square bg-muted border-8 border-background shadow-lg"></div>
+          <div className="w-[300px] h-[300px] rounded-full overflow-hidden aspect-square bg-muted border-8 border-background shadow-lg">
+            <Image
+                src="https://akshith.space/_next/image?url=%2Fmemoji.png&w=256&q=75"
+                alt="Akshith"
+                width={300}
+                height={300}
+                className="object-cover"
+            />
+          </div>
         </div>
         <div className="space-y-6 text-center md:text-left">
           <div className="space-y-2">
-            <span className="text-primary font-semibold">Jane Doe</span>
+            <span className="text-primary font-semibold">Akshith</span>
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold font-headline">
-              Creative Developer & UI/UX Designer
+              Software Engineer & Content Creator
             </h1>
           </div>
           <p className="text-muted-foreground md:text-lg">
-            I build beautiful, functional, and user-centric digital experiences. 
-            With a passion for both design and code, I bridge the gap between aesthetics and performance 
-            to deliver outstanding products.
+            I'm a Software Engineer from Toronto, Canada. I have a passion for building software that is user-friendly and has a positive impact on the world. I also create content on YouTube and TikTok about software engineering, productivity, and lifestyle.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
             <Button asChild size="lg" className="transition-transform duration-300 hover:scale-105">

@@ -1,4 +1,4 @@
-import { Code, Server, Database, Box, PenTool, Layers, type LucideIcon } from 'lucide-react';
+import { Code, Server, Database, Box, PenTool, Layers, type LucideIcon, Milestone, BookUser, Link2 } from 'lucide-react';
 import type { StaticImageData } from 'next/image';
 
 export type Project = {
@@ -35,61 +35,52 @@ export type BlogPost = {
 export const projects: Project[] = [
   {
     id: 1,
-    title: 'Project Alpha',
-    description: 'An advanced data visualization platform that translates complex datasets into intuitive and interactive graphics.',
+    title: 'uottahack 6',
+    description: 'The sixth iteration of Ottawa\'s largest hackathon. I was a full-stack developer on the web team.',
     image: {
       id: 'project-1',
-      url: 'https://picsum.photos/seed/proj1/600/400',
-      hint: 'data network'
+      url: 'https://akshith.space/_next/image?url=%2Fprojects%2Fuottahack.png&w=1920&q=75',
+      hint: 'hackathon website'
     },
-    link: '#',
-    tags: ['React', 'D3.js', 'Node.js'],
+    link: 'https://6.uottahack.com/',
+    tags: ['React', 'TypeScript', 'Firebase', 'GCP'],
   },
   {
     id: 2,
-    title: 'Project Beta',
-    description: 'A cross-platform mobile application designed to streamline team collaboration and project management on the go.',
+    title: 'Portfolio Website',
+    description: 'My personal portfolio website to showcase my projects and experiences.',
     image: {
       id: 'project-2',
-      url: 'https://picsum.photos/seed/proj2/600/400',
-      hint: 'mobile app'
+      url: 'https://akshith.space/_next/image?url=%2Fprojects%2Fportfolio.png&w=1920&q=75',
+      hint: 'portfolio website'
     },
-    link: '#',
-    tags: ['React Native', 'Firebase', 'TypeScript'],
-  },
-  {
-    id: 3,
-    title: 'Project Gamma',
-    description: 'A stunning architectural portfolio website featuring modern, sustainable designs and immersive 3D walkthroughs.',
-    image: {
-      id: 'project-3',
-      url: 'https://picsum.photos/seed/proj3/600/400',
-      hint: 'modern architecture'
-    },
-    link: '#',
-    tags: ['Next.js', 'Three.js', 'Framer Motion'],
-  },
-  {
-    id: 4,
-    title: 'Project Delta',
-    description: 'A full-featured e-commerce solution with a custom CMS, payment gateway integration, and personalized user experiences.',
-    image: {
-      id: 'project-4',
-      url: 'https://picsum.photos/seed/proj4/600/400',
-      hint: 'ecommerce website'
-    },
-    link: '#',
-    tags: ['Vue.js', 'Stripe', 'PostgreSQL'],
+    link: 'https://akshith.space/',
+    tags: ['Next.js', 'Tailwind CSS', 'TypeScript'],
   },
 ];
 
 export const skills: Skill[] = [
-  { name: 'React', icon: Layers },
-  { name: 'Node.js', icon: Server },
+  { name: 'Python', icon: Code },
+  { name: 'JavaScript', icon: Code },
   { name: 'TypeScript', icon: Code },
+  { name: 'Java', icon: Code },
+  { name: 'C', icon: Code },
+  { name: 'HTML/CSS', icon: Code },
+  { name: 'React', icon: Layers },
+  { name: 'Next.js', icon: Layers },
+  { name: 'Node.js', icon: Server },
+  { name: 'Express.js', icon: Server },
+  { name: 'Flask', icon: Server },
+  { name: 'Tailwind CSS', icon: PenTool },
   { name: 'PostgreSQL', icon: Database },
+  { name: 'MongoDB', icon: Database },
+  { name: 'Firebase', icon: Database },
+  { name: 'GCP', icon: Milestone },
+  { name: 'Vercel', icon: Milestone },
   { name: 'Docker', icon: Box },
+  { name: 'Git', icon: Link2 },
   { name: 'Figma', icon: PenTool },
+  { name: 'Premiere Pro', icon: PenTool },
 ];
 
 export const blogPosts: BlogPost[] = [
