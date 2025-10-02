@@ -9,6 +9,7 @@ import Footer from '@/components/footer';
 import SplashScreen from '@/components/splash-screen';
 import { useViewer } from '@/context/viewer-context';
 import CodePlayground from '@/components/sections/code-playground';
+import Contact from '@/components/sections/contact';
 
 export default function Home() {
   const { viewerType } = useViewer();
@@ -25,6 +26,7 @@ export default function Home() {
         {viewerType === 'developer' ? <CodePlayground /> : <Projects />}
         <Skills />
         {viewerType === 'developer' && <FavoriteBug />}
+        <Contact />
       </main>
       <Footer />
     </>
