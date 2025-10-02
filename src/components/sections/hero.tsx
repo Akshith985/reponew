@@ -83,9 +83,14 @@ export default function Hero() {
               </p>
             </>
           ) : (
-            <p className="text-muted-foreground md:text-lg">
-              I'm a Software Engineer from Toronto, Canada. I have a passion for building software that is user-friendly and has a positive impact on the world. I also create content on YouTube and TikTok about software engineering, productivity, and lifestyle.
-            </p>
+            <>
+               <h2 className="text-xl md:text-2xl font-bold font-headline text-primary">
+                Who I am, and what I do
+              </h2>
+              <p className="text-muted-foreground md:text-lg">
+                I bring ideas to life. As a mix of a designer, writer, and developer, I can take a concept from the first rough sketch to a polished and interactive final product. My goal is always to create things that are not just functional, but also engaging and memorable for the people using them.
+              </p>
+            </>
           )}
           <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
             <Button asChild size="lg" className="transition-transform duration-300 hover:scale-105">
