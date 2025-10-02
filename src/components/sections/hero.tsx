@@ -3,15 +3,10 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
-import { ChevronRight, User, Code } from 'lucide-react';
+import { ChevronRight } from 'lucide-react';
 import { Progress } from "@/components/ui/progress";
-import { useState } from 'react';
-import { cn } from '@/lib/utils';
-import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
-import { Label } from '@/components/ui/label';
 
 export default function Hero() {
-  const [viewerType, setViewerType] = useState('developer');
 
   return (
     <section id="about" className="bg-card">
@@ -35,21 +30,6 @@ export default function Hero() {
                     <span>XP: 15/100</span>
                 </div>
                 <Progress value={15} className='h-3' />
-              </div>
-              <div className="text-center">
-                  <p className="text-sm font-semibold mb-3">Who's viewing?</p>
-                  <RadioGroup defaultValue="developer" className="flex justify-center gap-4" onValueChange={setViewerType}>
-                      <Label htmlFor="developer" className={cn("flex flex-col items-center gap-2 rounded-lg border-2 p-4 cursor-pointer transition-all", viewerType === 'developer' ? 'bg-primary/20 border-primary' : 'border-border')}>
-                          <RadioGroupItem value="developer" id="developer" className="sr-only" />
-                          <Code className="h-6 w-6" />
-                          <span>Developer</span>
-                      </Label>
-                      <Label htmlFor="recruiter" className={cn("flex flex-col items-center gap-2 rounded-lg border-2 p-4 cursor-pointer transition-all", viewerType === 'recruiter' ? 'bg-primary/20 border-primary' : 'border-border')}>
-                           <RadioGroupItem value="recruiter" id="recruiter" className="sr-only" />
-                           <User className="h-6 w-6" />
-                           <span>Recruiter</span>
-                      </Label>
-                  </RadioGroup>
               </div>
           </div>
         </div>
