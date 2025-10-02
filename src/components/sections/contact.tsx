@@ -20,7 +20,9 @@ export default function Contact() {
     setResult('Sending....');
     const formData = new FormData(event.target as HTMLFormElement);
 
-    const accessKey = process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY;
+    // Directly using the access key here
+    const accessKey = "1f153213-9425-4ba4-bc00-95a81500f0b1";
+    
     if (!accessKey) {
       setResult("Configuration error: Access key is missing.");
       toast({
