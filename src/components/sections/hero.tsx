@@ -5,22 +5,35 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { ChevronRight } from 'lucide-react';
 import { Progress } from "@/components/ui/progress";
+import { useViewer } from '@/context/viewer-context';
 
 export default function Hero() {
+  const { viewerType } = useViewer();
 
   return (
     <section id="about" className="bg-card">
       <div className="container grid md:grid-cols-2 gap-10 items-center">
         <div className="flex flex-col items-center gap-6">
           <div className="w-[200px] h-[200px] rounded-lg overflow-hidden aspect-square bg-muted border-4 border-background shadow-lg">
-            <Image
-                src="https://picsum.photos/seed/pixel-char/200/200"
-                data-ai-hint="pixelated character"
-                alt="Pixelated Character"
-                width={200}
-                height={200}
-                className="object-cover"
-            />
+            {viewerType === 'recruiter' ? (
+               <Image
+                  src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExMDdkYmxkcHd6ZTkxeTJkZGJiemtwb3dwcTJ3MHBpeHE3bHpodXY2MSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/XQX4Sci7PdBEripno6/giphy.gif"
+                  alt="Recruiter GIF"
+                  width={200}
+                  height={200}
+                  className="object-cover"
+                  unoptimized
+              />
+            ) : (
+              <Image
+                  src="https://picsum.photos/seed/pixel-char/200/200"
+                  data-ai-hint="pixelated character"
+                  alt="Pixelated Character"
+                  width={200}
+                  height={200}
+                  className="object-cover"
+              />
+            )}
           </div>
           <div className='w-full max-w-sm space-y-4'>
               <div className='space-y-2'>
