@@ -11,23 +11,23 @@ export default function Footer() {
           </p>
         </div>
         <div className="flex items-center gap-4 md:ml-auto">
-          <a href="tel:+1234567890" className="text-muted-foreground hover:text-foreground flex items-center gap-2">
+          <a href="tel:+919342047169" className="text-muted-foreground hover:text-foreground flex items-center gap-2">
             <Phone className="h-5 w-5" />
             <span className="sr-only">Phone</span>
           </a>
-          <a href="mailto:hello@akshith.space" className="text-muted-foreground hover:text-foreground flex items-center gap-2">
+          <a href="mailto:akshithclg@gmail.com" className="text-muted-foreground hover:text-foreground flex items-center gap-2">
             <Mail className="h-5 w-5" />
             <span className="sr-only">Email</span>
           </a>
-          <Link href="https://github.com/akshith-s" target="_blank" className="text-muted-foreground hover:text-foreground">
+          <Link href="https://github.com/Akshith985" target="_blank" className="text-muted-foreground hover:text-foreground">
             <Github className="h-5 w-5" />
             <span className="sr-only">GitHub</span>
           </Link>
-          <Link href="https://www.linkedin.com/in/akshith-s/" target="_blank" className="text-muted-foreground hover:text-foreground">
+          <Link href="https://www.linkedin.com/in/akshith-anand-5a5988379/" target="_blank" className="text-muted-foreground hover:text-foreground">
             <Linkedin className="h-5 w-5" />
             <span className="sr-only">LinkedIn</span>
           </Link>
-          <Link href="#" target="_blank" className="text-muted-foreground hover:text-foreground">
+          <Link href="https://www.instagram.com/ax_it47/" target="_blank" className="text-muted-foreground hover:text-foreground">
             <Instagram className="h-5 w-5" />
             <span className="sr-only">Instagram</span>
           </Link>
