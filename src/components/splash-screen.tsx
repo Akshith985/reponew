@@ -23,7 +23,7 @@ export default function SplashScreen() {
         setTimeout(() => {
           setViewerType(selectedRole);
         }, 500); // Match fade-out duration
-      }, 2500); // Time for GIF to play
+      }, 1500); // Time for GIF to play
     } else if (selectedRole) {
       setIsFadingOut(true);
       setTimeout(() => {
