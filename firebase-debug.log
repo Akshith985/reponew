@@ -1,0 +1,64 @@
+[debug] [2025-10-02T11:38:31.679Z] ----------------------------------------------------------------------
+[debug] [2025-10-02T11:38:31.682Z] Command:       /nix/store/ws50yvm6vzlzf7jzz6n7xh4szddrack1-nodejs-20.19.1/bin/node /home/user/.global_modules/bin/firebase init hosting
+[debug] [2025-10-02T11:38:31.683Z] CLI Version:   14.17.0
+[debug] [2025-10-02T11:38:31.683Z] Platform:      linux
+[debug] [2025-10-02T11:38:31.683Z] Node Version:  v20.19.1
+[debug] [2025-10-02T11:38:31.684Z] Time:          Thu Oct 02 2025 11:38:31 GMT+0000 (Coordinated Universal Time)
+[debug] [2025-10-02T11:38:31.684Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2025-10-02T11:38:31.690Z] Checked if tokens are valid: true, expires at: 1759408048624
+[debug] [2025-10-02T11:38:31.691Z] Checked if tokens are valid: true, expires at: 1759408048624
+[debug] [2025-10-02T11:38:31.695Z] >>> [apiv2][query] GET https://monospace-pa.googleapis.com/v1/workspaces/studio-49990468 [none]
+[debug] [2025-10-02T11:38:32.650Z] <<< [apiv2][status] GET https://monospace-pa.googleapis.com/v1/workspaces/studio-49990468 200
+[debug] [2025-10-02T11:38:32.654Z] <<< [apiv2][body] GET https://monospace-pa.googleapis.com/v1/workspaces/studio-49990468 {"workspaceId":"studio-49990468","name":"FolioForge","workspaceRedirectUrl":"firebase-studio-1759381526412.cluster-m7dwy2bmizezqukxkuxd55k5ka.cloudworkstations.dev","status":"WORKSPACE_STATUS_RUNNING","lastAccessDatetime":"2025-10-02T11:17:10.682873Z","workspaceTemplate":"WORKSPACE_TEMPLATE_CAPRA_BUILDER","owner":"SELF","serviceAccountEmail":"msp-7230487323190544359@monospace-per-ws-sa-5.iam.gserviceaccount.com","ownerEmail":"akshithanand86@gmail.com","workspaceImageUrl":"https://www.gstatic.com/monospace/250314/workspace-prototype-192.png","templateArgs":"{}","templateRepoUrl":"file:///usr/local/monospace/templates/private/_capra_next","workstationAccessToken":"eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJodHRwczovL2Nsb3VkLmdvb2dsZS5jb20vd29ya3N0YXRpb25zIiwiYXVkIjoiZmlyZWJhc2Utc3R1ZGlvLTE3NTkzODE1MjY0MTIuY2x1c3Rlci1tN2R3eTJibWl6ZXpxdWt4a3V4ZDU1azVrYS5jbG91ZHdvcmtzdGF0aW9ucy5kZXYiLCJpYXQiOjE3NTk0MDUxMTIsImV4cCI6MTc1OTQ5MTUxMn0.4hfDDJwZvZzQZmVeVOuBDolIF-c2Ima-K6KUQp9CNyRep9cboUF5X-nXlkv5fWPVD9k_8tZJgA8CI6cKUeA3vfixICr6enEM5hQk94HdqhIvcoQaQK1RvNMl5xjzUFedD51Xozc3KE3VoFc-GZOnDsKIQ4h2QPAwlcdbVZ_3EIm1QvKcuabv_LU5dlhy8G5scpCBkLca-gj-KNel-s39XfSiqbVc1Htx7laCVZrHxn3LpaYRp93a6KGoRE8GhWcImFrFTdOjfgLUmxkmYW76Dxkk7nb3V7x_TxypLzC0GBnx7lJpHrK7IlmfcXPPLk8tO1LS0xeGWD4vxNP6lvsUtA","firebaseProjectId":"studio-49990468-681f8"}
+[debug] [2025-10-02T11:38:32.664Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/userinfo.email"]
+[debug] [2025-10-02T11:38:32.667Z] > authorizing via signed-in user (akshithanand86@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  /home/user/studio
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[debug] [2025-10-02T11:38:32.681Z] Using project from CLI flag: studio-49990468-681f8
+[debug] [2025-10-02T11:38:32.684Z] Checked if tokens are valid: true, expires at: 1759408048624
+[debug] [2025-10-02T11:38:32.684Z] Checked if tokens are valid: true, expires at: 1759408048624
+[debug] [2025-10-02T11:38:32.684Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/studio-49990468-681f8 [none]
+[debug] [2025-10-02T11:38:32.942Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/studio-49990468-681f8 200
+[debug] [2025-10-02T11:38:32.944Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/studio-49990468-681f8 {"projectId":"studio-49990468-681f8","projectNumber":"369446477287","displayName":"Firebase app","name":"projects/studio-49990468-681f8","resources":{"hostingSite":"studio-49990468-681f8"},"state":"ACTIVE","etag":"1_9db5095e-bffe-45c4-a0b6-d22ed6b82e38"}
+[info] i  Using project studio-49990468-681f8 (Firebase app) 
+[info] 
+=== Hosting Setup
+[debug] [2025-10-02T11:38:33.016Z] Checked if tokens are valid: true, expires at: 1759408048624
+[debug] [2025-10-02T11:38:33.017Z] Checked if tokens are valid: true, expires at: 1759408048624
+[debug] [2025-10-02T11:38:33.025Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/studio-49990468-681f8 [none]
+[debug] [2025-10-02T11:38:33.226Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/studio-49990468-681f8 200
+[debug] [2025-10-02T11:38:33.230Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/studio-49990468-681f8 {"projectId":"studio-49990468-681f8","projectNumber":"369446477287","displayName":"Firebase app","name":"projects/studio-49990468-681f8","resources":{"hostingSite":"studio-49990468-681f8"},"state":"ACTIVE","etag":"1_9db5095e-bffe-45c4-a0b6-d22ed6b82e38"}
+[info] 
+[info] Your public directory is the folder (relative to your project directory) that
+[info] will contain Hosting assets to be uploaded with firebase deploy. If you
+[info] have a build process for your assets, use your build's output directory.
+[info] 
+[debug] [2025-10-02T11:38:44.960Z] >>> [apiv2][query] GET https://www.gstatic.com/firebasejs/releases.json [none]
+[debug] [2025-10-02T11:38:44.984Z] <<< [apiv2][status] GET https://www.gstatic.com/firebasejs/releases.json 200
+[debug] [2025-10-02T11:38:44.984Z] <<< [apiv2][body] GET https://www.gstatic.com/firebasejs/releases.json {"current":{"version":"12.3.0","browserURL":"https://www.gstatic.com/firebasejs/12.3.0/firebase.js","packageURL":"https://www.gstatic.com/firebasejs/12.3.0/firebase.tgz"},"live":{"version":"12.3","browserURL":"https://www.gstatic.com/firebasejs/live/12.3/firebase.js","packageURL":"https://www.gstatic.com/firebasejs/live/12.3/firebase.tgz"},"components":{"ai":"https://www.gstatic.com/firebasejs/12.3.0/firebase-ai.js","analytics":"https://www.gstatic.com/firebasejs/12.3.0/firebase-analytics.js","app":"https://www.gstatic.com/firebasejs/12.3.0/firebase-app.js","app-check":"https://www.gstatic.com/firebasejs/12.3.0/firebase-app-check.js","auth":"https://www.gstatic.com/firebasejs/12.3.0/firebase-auth.js","auth/cordova":"https://www.gstatic.com/firebasejs/12.3.0/firebase-auth/cordova.js","auth/web-extension":"https://www.gstatic.com/firebasejs/12.3.0/firebase-auth/web-extension.js","functions":"https://www.gstatic.com/firebasejs/12.3.0/firebase-functions.js","firestore":"https://www.gstatic.com/firebasejs/12.3.0/firebase-firestore.js","firestore/lite":"https://www.gstatic.com/firebasejs/12.3.0/firebase-firestore/lite.js","installations":"https://www.gstatic.com/firebasejs/12.3.0/firebase-installations.js","storage":"https://www.gstatic.com/firebasejs/12.3.0/firebase-storage.js","performance":"https://www.gstatic.com/firebasejs/12.3.0/firebase-performance.js","remote-config":"https://www.gstatic.com/firebasejs/12.3.0/firebase-remote-config.js","messaging":"https://www.gstatic.com/firebasejs/12.3.0/firebase-messaging.js","messaging/sw":"https://www.gstatic.com/firebasejs/12.3.0/firebase-messaging/sw.js","database":"https://www.gstatic.com/firebasejs/12.3.0/firebase-database.js","data-connect":"https://www.gstatic.com/firebasejs/12.3.0/firebase-data-connect.js","firestore.memory":"https://www.gstatic.com/firebasejs/12.3.0/firebase-firestore.memory.js"}}
+[info] i  public/index.html is unchanged 
+[info] 
+[info] i  Detected a .git folder at /home/user/studio 
+[info] i  Authorizing with GitHub to upload your service account to a GitHub repository's secrets store. 
+[info] 
+[info] Visit this URL on this device to log in:
+[info] https://github.com/login/oauth/authorize?client_id=89cf50f02ac6aaed3484&state=393590775&redirect_uri=http%3A%2F%2Flocalhost%3A9005&scope=read%3Auser%20repo%20public_repo
+[info] 
+[info] Waiting for authentication...
