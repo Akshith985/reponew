@@ -73,7 +73,7 @@ export function AdventurerDialog() {
           <div className="text-center space-y-4 mb-12">
             <h2 className="text-3xl md:text-4xl font-bold font-headline">Code Playground</h2>
             <p className="text-muted-foreground md:text-lg max-w-2xl mx-auto">
-              An interactive example built with ShadCN UI and Next.js. Click "Run" to see it in action.
+              A snippet of how i make things interactive
             </p>
           </div>
           <Card className="max-w-4xl mx-auto overflow-hidden">
