@@ -40,9 +40,10 @@ export default function Hero() {
                 <div className='flex justify-between text-sm font-semibold text-muted-foreground'>
                     <span>Level 1</span>
                     <span>Explorer</span>
-                    <span>XP: 15/100</span>
+                    <span>XP: 50/100</span>
                 </div>
-                <Progress value={15} className='h-3' />
+                <Progress value={50} className='h-3' />
+                <p className="text-xs text-center text-muted-foreground italic">"Always Exploring!"</p>
               </div>
           </div>
         </div>
