@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { ChevronRight } from 'lucide-react';
+import { Progress } from "@/components/ui/progress"
 
 export default function Hero() {
   const heroImage = PlaceHolderImages.find((img) => img.id === 'hero-portrait');
@@ -10,15 +11,24 @@ export default function Hero() {
   return (
     <section id="about" className="bg-card">
       <div className="container grid md:grid-cols-2 gap-10 items-center">
-        <div className="flex justify-center">
-          <div className="w-[300px] h-[300px] rounded-full overflow-hidden aspect-square bg-muted border-8 border-background shadow-lg">
+        <div className="flex flex-col items-center gap-6">
+          <div className="w-[200px] h-[200px] rounded-lg overflow-hidden aspect-square bg-muted border-4 border-background shadow-lg">
             <Image
-                src="https://akshith.space/_next/image?url=%2Fmemoji.png&w=256&q=75"
-                alt="Akshith"
-                width={300}
-                height={300}
+                src="https://picsum.photos/seed/pixel-char/200/200"
+                data-ai-hint="pixelated character"
+                alt="Pixelated Character"
+                width={200}
+                height={200}
                 className="object-cover"
             />
+          </div>
+          <div className='w-full max-w-sm space-y-2'>
+              <div className='flex justify-between text-sm font-semibold text-muted-foreground'>
+                  <span>Level 1</span>
+                  <span>Explorer</span>
+                  <span>XP: 15/100</span>
+              </div>
+              <Progress value={15} className='h-3' />
           </div>
         </div>
         <div className="space-y-6 text-center md:text-left">
