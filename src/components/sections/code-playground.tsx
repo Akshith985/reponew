@@ -1,40 +1,120 @@
 'use client';
 
+import {
+  AlertDialog,
+  AlertDialogContent,
+  AlertDialogHeader,
+  AlertDialogTitle,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogAction,
+} from '@/components/ui/alert-dialog';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
+import { useState } from 'react';
+import Image from 'next/image';
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { atomDark } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
 export default function CodePlayground() {
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
+
+  const codeString = `
+import {
+  AlertDialog,
+  AlertDialogContent,
+  AlertDialogHeader,
+  AlertDialogTitle,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogAction,
+} from '@/components/ui/alert-dialog';
+import { Button } from '@/components/ui/button';
+import { useState } from 'react';
+import Image from 'next/image';
+
+export function AdventurerDialog() {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
-    <section id="code-playground" className="bg-background">
-      <div className="container">
-        <div className="text-center space-y-4 mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold font-headline">Code Playground</h2>
-          <p className="text-muted-foreground md:text-lg max-w-2xl mx-auto">
-            A little peek into how this site adapts. Feel free to interact with the code.
-          </p>
+    <>
+      <Button onClick={() => setIsOpen(true)}>Run</Button>
+      <AlertDialog open={isOpen} onOpenChange={setIsOpen}>
+        <AlertDialogContent>
+          <AlertDialogHeader>
+            <AlertDialogTitle className="text-center font-headline text-2xl">
+              Hello Adventurer!
+            </AlertDialogTitle>
+            <AlertDialogDescription className="flex justify-center">
+              <Image
+                src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExNm9ydDUzaTdndnNlYWNueWZ1c2ltNXJvbnJqcGtsdWJoYXBjdzJ0MCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/TlvFvPxp1pfckzFcVy/giphy.gif"
+                alt="Adventurer GIF"
+                width={250}
+                height={250}
+                unoptimized
+                className="rounded-lg"
+              />
+            </AlertDialogDescription>
+          </AlertDialogHeader>
+          <AlertDialogFooter>
+            <AlertDialogAction>Continue Quest</AlertDialogAction>
+          </AlertDialogFooter>
+        </AlertDialogContent>
+      </AlertDialog>
+    </>
+  );
+}
+  `;
+
+  return (
+    <>
+      <section id="code-playground" className="bg-background">
+        <div className="container">
+          <div className="text-center space-y-4 mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold font-headline">Code Playground</h2>
+            <p className="text-muted-foreground md:text-lg max-w-2xl mx-auto">
+              An interactive example built with ShadCN UI and Next.js. Click "Run" to see it in action.
+            </p>
+          </div>
+          <Card className="max-w-4xl mx-auto overflow-hidden">
+            <CardHeader className="flex-row items-center justify-between">
+              <div>
+                <CardTitle className="font-headline text-lg">Interactive Dialog</CardTitle>
+                <CardDescription className="font-sans">The code for the "Run" button and dialog below.</CardDescription>
+              </div>
+               <Button onClick={() => setIsDialogOpen(true)}>Run</Button>
+            </CardHeader>
+            <CardContent className="p-0">
+               <SyntaxHighlighter language="tsx" style={atomDark} customStyle={{ margin: 0, borderRadius: 0, border: 'none', background: 'hsl(var(--card))' }} >
+                {codeString.trim()}
+              </SyntaxHighlighter>
+            </CardContent>
+          </Card>
         </div>
-        <Card className="max-w-4xl mx-auto overflow-hidden">
-          <CardHeader>
-             <CardTitle className="font-headline text-lg">Live Code Editor</CardTitle>
-             <CardDescription className="font-sans">An interactive greeting tool for fellow adventurers.</CardDescription>
-          </CardHeader>
-          <CardContent>
-            <iframe
-              height="400"
-              style={{ width: '100%' }}
-              scrolling="no"
-              title="Hello Adventurer"
-              src="https://codepen.io/studio-ai/embed/zYKqJgY?default-tab=js%2Cresult&theme-id=dark"
-              frameBorder="no"
-              loading="lazy"
-              allowFullScreen={true}
-            >
-              See the Pen <a href="https://codepen.io/studio-ai/pen/zYKqJgY">Hello Adventurer</a> by
-              Studio AI (<a href="https://codepen.io/studio-ai">@studio-ai</a>) on{' '}
-              <a href="https://codepen.io">CodePen</a>.
-            </iframe>
-          </CardContent>
-        </Card>
-      </div>
-    </section>
+      </section>
+
+      <AlertDialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
+        <AlertDialogContent>
+          <AlertDialogHeader>
+            <AlertDialogTitle className="text-center font-headline text-2xl">
+              Hello Adventurer!
+            </AlertDialogTitle>
+            <AlertDialogDescription className="flex justify-center">
+              <Image
+                src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExNm9ydDUzaTdndnNlYWNueWZ1c2ltNXJvbnJqcGtsdWJoYXBjdzJ0MCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/TlvFvPxp1pfckzFcVy/giphy.gif"
+                alt="Adventurer GIF"
+                width={250}
+                height={250}
+                unoptimized
+                className="rounded-lg"
+              />
+            </AlertDialogDescription>
+          </AlertDialogHeader>
+          <AlertDialogFooter>
+            <AlertDialogAction>Continue Quest</AlertDialogAction>
+          </AlertDialogFooter>
+        </AlertDialogContent>
+      </AlertDialog>
+    </>
   );
 }
