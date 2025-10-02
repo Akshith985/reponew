@@ -9,6 +9,7 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
 import { Loader2 } from 'lucide-react';
+import { sendEmail } from '@/app/send-email-action';
 
 const formSchema = z.object({
   name: z.string().min(2, 'Name must be at least 2 characters.'),
@@ -29,13 +30,21 @@ export default function Contact() {
     },
   });
 
-  const onSubmit = (data: FormData) => {
-    console.log(data);
-    toast({
-      title: 'Message Sent!',
-      description: "Thanks for reaching out. I'll get back to you soon.",
-    });
-    form.reset();
+  const onSubmit = async (data: FormData) => {
+    try {
+      await sendEmail(data);
+      toast({
+        title: 'Message Sent!',
+        description: "Thanks for reaching out. I'll get back to you soon.",
+      });
+      form.reset();
+    } catch (error) {
+       toast({
+        variant: "destructive",
+        title: 'Uh oh! Something went wrong.',
+        description: "There was a problem sending your message. Please try again later.",
+      });
+    }
   };
 
   return (
