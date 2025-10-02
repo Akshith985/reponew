@@ -42,7 +42,7 @@ export const projects: Project[] = [
       url: 'https://picsum.photos/seed/mental-health-app/600/400',
       hint: 'calm meditation'
     },
-    link: '#',
+    link: 'https://njjuouio.netlify.app/',
     tags: ['React Native', 'Node.js', 'MongoDB', 'Firebase'],
   },
   {
