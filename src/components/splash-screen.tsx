@@ -47,7 +47,7 @@ export default function SplashScreen() {
                 width={300}
                 height={300}
                 unoptimized
-                className="rounded-lg border-4 border-primary"
+                className="rounded-lg"
             />
             <h1 className="text-4xl font-bold font-headline">Welcome!</h1>
         </div>
