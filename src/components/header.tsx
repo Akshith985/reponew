@@ -11,11 +11,13 @@ export default function Header() {
 
   const navLinks = [
     { href: '#about', label: 'About' },
-    { href: viewerType === 'developer' ? '#code-playground' : '#projects', label: 'Projects' },
+    {
+      href: viewerType === 'developer' ? '#code-playground' : '#projects',
+      label: viewerType === 'developer' ? 'CodePlay' : 'Projects',
+    },
     { href: '#skills', label: 'Skills' },
     { href: '#favorite-bug', label: 'Favorite Bug' },
     { href: '#contact', label: 'Contact' },
-    { href: '/blog', label: 'Blog' },
   ];
 
   return (
