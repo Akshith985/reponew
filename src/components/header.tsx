@@ -16,7 +16,10 @@ export default function Header() {
       label: viewerType === 'developer' ? 'CodePlay' : 'Projects',
     },
     { href: '#skills', label: 'Skills' },
-    { href: '#favorite-bug', label: 'Favorite Bug' },
+    {
+      href: viewerType === 'developer' ? '#favorite-bug' : '#achievements',
+      label: viewerType === 'developer' ? 'Favorite Bug' : 'Achievements',
+    },
     { href: '#contact', label: 'Contact' },
   ];
 

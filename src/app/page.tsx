@@ -11,6 +11,7 @@ import Footer from '@/components/footer';
 import SplashScreen from '@/components/splash-screen';
 import { useViewer } from '@/context/viewer-context';
 import CodePlayground from '@/components/sections/code-playground';
+import Achievements from '@/components/sections/achievements';
 
 export default function Home() {
   const { viewerType } = useViewer();
@@ -26,7 +27,7 @@ export default function Home() {
         <Hero />
         {viewerType === 'developer' ? <CodePlayground /> : <Projects />}
         <Skills />
-        <FavoriteBug />
+        {viewerType === 'developer' ? <FavoriteBug /> : <Achievements />}
         <AiRecommender />
         <Contact />
       </main>
