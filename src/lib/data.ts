@@ -64,7 +64,6 @@ export const skills: Skill[] = [
   { name: 'JavaScript', icon: Code },
   { name: 'TypeScript', icon: Code },
   { name: 'Java', icon: Code },
-  { name: 'C', icon: Code },
   { name: 'HTML/CSS', icon: Code },
   { name: 'React', icon: Layers },
   { name: 'Next.js', icon: Layers },

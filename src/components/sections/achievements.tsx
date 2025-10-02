@@ -3,7 +3,9 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Award } from 'lucide-react';
 
 export default function Achievements() {
-  const unlockedSkills = skills.slice(0, 5); // Example: first 5 skills unlocked
+  const unlockedSkillNames = ['HTML/CSS', 'React', 'Next.js', 'Node.js', 'MongoDB', 'Tailwind CSS', 'Flask', 'Figma', 'Git'];
+  const unlockedSkills = skills.filter(skill => unlockedSkillNames.includes(skill.name));
+  const lockedSkills = skills.filter(skill => !unlockedSkillNames.includes(skill.name));
 
   return (
     <section id="achievements" className="bg-background">
@@ -26,7 +28,7 @@ export default function Achievements() {
               </CardContent>
             </Card>
           ))}
-           {skills.slice(5).map((skill) => (
+           {lockedSkills.map((skill) => (
             <Card key={skill.name} className="flex flex-col items-center justify-center p-6 bg-card/50 filter grayscale">
               <CardContent className="p-0 flex flex-col items-center gap-4 text-center">
                  <div className="p-4 bg-muted/20 rounded-full">
