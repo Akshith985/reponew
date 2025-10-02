@@ -3,7 +3,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Award } from 'lucide-react';
 
 export default function Achievements() {
-  const unlockedSkillNames = ['HTML/CSS', 'React', 'Next.js', 'Node.js', 'MongoDB', 'Tailwind CSS', 'Flask', 'Figma', 'Git'];
+  const unlockedSkillNames = ['HTML/CSS', 'React', 'Next.js', 'Node.js', 'MongoDB', 'Tailwind CSS', 'Flask', 'Figma', 'Git', 'Python', 'JavaScript', 'TypeScript', 'Java', 'Firebase'];
   const unlockedSkills = skills.filter(skill => unlockedSkillNames.includes(skill.name));
   const lockedSkills = skills.filter(skill => !unlockedSkillNames.includes(skill.name));
 
