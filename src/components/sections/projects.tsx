@@ -4,7 +4,7 @@ import { projects } from '@/lib/data';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Github } from 'lucide-react';
 
 export default function Projects() {
   return (
@@ -41,11 +41,21 @@ export default function Projects() {
                     <Badge key={tag} variant="secondary">{tag}</Badge>
                   ))}
                 </div>
-                <Button asChild variant="link" className="px-0">
-                  <Link href={project.link} target="_blank">
-                    View Project <ArrowRight className="ml-2 h-4 w-4" />
-                  </Link>
-                </Button>
+                <div className="flex items-center gap-4">
+                  <Button asChild variant="link" className="px-0">
+                    <Link href={project.link} target="_blank">
+                      View Project <ArrowRight className="ml-2 h-4 w-4" />
+                    </Link>
+                  </Button>
+                  {project.githubLink && (
+                     <Button asChild variant="outline" size="sm">
+                        <Link href={project.githubLink} target="_blank">
+                            <Github className="mr-2 h-4 w-4" />
+                            GitHub
+                        </Link>
+                     </Button>
+                  )}
+                </div>
               </CardFooter>
             </Card>
           ))}

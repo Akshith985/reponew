@@ -12,6 +12,7 @@ export type Project = {
     hint: string;
   };
   link: string;
+  githubLink?: string;
   tags: string[];
 };
 
@@ -44,6 +45,7 @@ export const projects: Project[] = [
       hint: 'calm meditation'
     },
     link: 'https://studio-lovat-kappa-36.vercel.app/',
+    githubLink: 'https://github.com/Akshith985',
     tags: ['React Native', 'Node.js', 'MongoDB', 'Firebase'],
   },
   {
@@ -56,6 +58,7 @@ export const projects: Project[] = [
       hint: 'local market'
     },
     link: '#',
+    githubLink: 'https://github.com/Akshith985',
     tags: ['Next.js', 'TypeScript', 'PostgreSQL', 'Docker'],
   },
 ];
