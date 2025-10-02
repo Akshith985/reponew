@@ -44,9 +44,10 @@ export default function SplashScreen() {
             <Image 
                 src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExdTVhbHk2aGo5aWdpZHM5d2s4ZXU2eGRzaWRrb3BsYWtrOWoyM2I4dyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/kNOHmVZB9eDNMXcjJT/giphy.gif"
                 alt="Welcome GIF"
-                width={200}
-                height={200}
+                width={300}
+                height={300}
                 unoptimized
+                className="rounded-lg border-4 border-primary"
             />
             <h1 className="text-4xl font-bold font-headline">Welcome!</h1>
         </div>
