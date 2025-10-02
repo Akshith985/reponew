@@ -10,6 +10,7 @@ import Contact from '@/components/sections/contact';
 import Footer from '@/components/footer';
 import SplashScreen from '@/components/splash-screen';
 import { useViewer } from '@/context/viewer-context';
+import CodePlayground from '@/components/sections/code-playground';
 
 export default function Home() {
   const { viewerType } = useViewer();
@@ -23,7 +24,7 @@ export default function Home() {
       <Header />
       <main className="flex-1">
         <Hero />
-        <Projects />
+        {viewerType === 'developer' ? <CodePlayground /> : <Projects />}
         <Skills />
         <Achievements />
         <AiRecommender />

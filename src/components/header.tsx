@@ -4,17 +4,20 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { Menu, Feather } from 'lucide-react';
-
-const navLinks = [
-  { href: '#about', label: 'About' },
-  { href: '#projects', label: 'Projects' },
-  { href: '#skills', label: 'Skills' },
-  { href: '#achievements', label: 'Achievements' },
-  { href: '#contact', label: 'Contact' },
-  { href: '/blog', label: 'Blog' },
-];
+import { useViewer } from '@/context/viewer-context';
 
 export default function Header() {
+  const { viewerType } = useViewer();
+
+  const navLinks = [
+    { href: '#about', label: 'About' },
+    { href: viewerType === 'developer' ? '#code-playground' : '#projects', label: 'Projects' },
+    { href: '#skills', label: 'Skills' },
+    { href: '#achievements', label: 'Achievements' },
+    { href: '#contact', label: 'Contact' },
+    { href: '/blog', label: 'Blog' },
+  ];
+
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-14 max-w-screen-2xl items-center">
@@ -28,7 +31,7 @@ export default function Header() {
           <nav className="flex items-center gap-6 text-sm">
             {navLinks.map((link) => (
               <Link
-                key={link.href}
+                key={link.label}
                 href={link.href}
                 className="transition-colors hover:text-foreground/80 text-foreground/60"
               >
