@@ -20,7 +20,18 @@ export default function Contact() {
     setResult('Sending....');
     const formData = new FormData(event.target as HTMLFormElement);
 
-    formData.append('access_key', '1f153213-9425-4ba4-bc00-95a81500f0b1');
+    const accessKey = process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY;
+    if (!accessKey) {
+      setResult("Configuration error: Access key is missing.");
+      toast({
+        variant: 'destructive',
+        title: 'Configuration Error',
+        description: 'The form is not configured correctly. Please contact the site administrator.',
+      });
+      setIsSubmitting(false);
+      return;
+    }
+    formData.append("access_key", accessKey);
 
     try {
       const response = await fetch('https://api.web3forms.com/submit', {
