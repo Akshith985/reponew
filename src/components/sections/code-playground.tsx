@@ -5,20 +5,12 @@ import { Button } from '@/components/ui/button';
 import { Play } from 'lucide-react';
 import { useState } from 'react';
 
-const codeSnippet = `function-based-on-viewer {
-    if (viewer === 'recruiter') {
-        return "Focus on professional achievements and skills.";
-    } else if (viewer === 'developer') {
-        return "Showcase cool code and side projects!";
-    } else {
-        return "A personalized welcome for everyone.";
-    }
+const codeSnippet = `// A simple script to greet fellow adventurers!
+function greet() {
+    return "Hello Fellow Adventurer!";
 }`;
 
-const outputResult = `
-Success! Output:
-> "Showcase cool code and side projects!"
-`;
+const outputResult = `> Hello Fellow Adventurer!`;
 
 export default function CodePlayground() {
   const [showOutput, setShowOutput] = useState(false);
@@ -40,8 +32,8 @@ export default function CodePlayground() {
         <Card className="max-w-3xl mx-auto font-code">
           <CardHeader className="flex flex-row items-center justify-between">
             <div>
-                <CardTitle className="font-headline text-lg">viewer-logic.js</CardTitle>
-                <CardDescription className="font-sans">How the portfolio personalizes content</CardDescription>
+                <CardTitle className="font-headline text-lg">greeting.js</CardTitle>
+                <CardDescription className="font-sans">A tool for fellow adventurers</CardDescription>
             </div>
             <Button onClick={handleRun} size="sm">
               <Play className="mr-2 h-4 w-4" />
@@ -55,7 +47,7 @@ export default function CodePlayground() {
             {showOutput && (
                 <div className="mt-4 animate-in fade-in duration-500">
                     <h3 className="font-semibold mb-2 font-sans">Output</h3>
-                    <pre className="bg-green-900/30 text-green-300 border border-green-700 p-4 rounded-md text-sm">
+                    <pre className="bg-black text-yellow-300 border-2 border-green-500 p-4 rounded-md text-sm">
                         {outputResult}
                     </pre>
                 </div>
