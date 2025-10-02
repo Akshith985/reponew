@@ -13,7 +13,7 @@ export default function Header() {
     { href: '#about', label: 'About' },
     { href: viewerType === 'developer' ? '#code-playground' : '#projects', label: 'Projects' },
     { href: '#skills', label: 'Skills' },
-    { href: '#achievements', label: 'Achievements' },
+    { href: '#favorite-bug', label: 'Favorite Bug' },
     { href: '#contact', label: 'Contact' },
     { href: '/blog', label: 'Blog' },
   ];

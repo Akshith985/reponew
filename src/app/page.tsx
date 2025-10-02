@@ -4,7 +4,7 @@ import Header from '@/components/header';
 import Hero from '@/components/sections/hero';
 import Projects from '@/components/sections/projects';
 import Skills from '@/components/sections/skills';
-import Achievements from '@/components/sections/achievements';
+import FavoriteBug from '@/components/sections/favorite-bug';
 import AiRecommender from '@/components/sections/ai-recommender';
 import Contact from '@/components/sections/contact';
 import Footer from '@/components/footer';
@@ -26,7 +26,7 @@ export default function Home() {
         <Hero />
         {viewerType === 'developer' ? <CodePlayground /> : <Projects />}
         <Skills />
-        <Achievements />
+        <FavoriteBug />
         <AiRecommender />
         <Contact />
       </main>
