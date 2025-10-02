@@ -11,16 +11,7 @@ export default function Hero() {
     <section id="about" className="bg-card">
       <div className="container grid md:grid-cols-2 gap-10 items-center">
         <div className="flex justify-center">
-          {heroImage && (
-            <Image
-              src={heroImage.imageUrl}
-              alt={heroImage.description}
-              width={450}
-              height={450}
-              className="rounded-full aspect-square object-cover border-8 border-background shadow-lg"
-              data-ai-hint={heroImage.imageHint}
-            />
-          )}
+          <div className="w-[450px] h-[450px] rounded-full aspect-square bg-muted border-8 border-background shadow-lg"></div>
         </div>
         <div className="space-y-6 text-center md:text-left">
           <div className="space-y-2">
