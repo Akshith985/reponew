@@ -16,7 +16,7 @@ export default function SplashScreen() {
   const [showWelcome, setShowWelcome] = useState(false);
 
   const handleSelect = () => {
-    if (selectedRole === 'recruiter') {
+    if (selectedRole) {
       setShowWelcome(true);
       setTimeout(() => {
         setIsFadingOut(true);
@@ -24,22 +24,12 @@ export default function SplashScreen() {
           setViewerType(selectedRole);
         }, 500); // Match fade-out duration
       }, 1500); // Time for GIF to play
-    } else if (selectedRole) {
-      setIsFadingOut(true);
-      setTimeout(() => {
-        setViewerType(selectedRole);
-      }, 500); // Match fade-out duration
     }
   };
 
-  return (
-    <div
-      className={cn(
-        'fixed inset-0 z-[100] flex flex-col items-center justify-center bg-background transition-opacity duration-500 border-4 border-primary',
-        isFadingOut ? 'opacity-0' : 'opacity-100'
-      )}
-    >
-      {showWelcome ? (
+  const renderWelcomeContent = () => {
+    if (selectedRole === 'recruiter') {
+      return (
         <div className="flex items-center justify-center text-center gap-4">
             <Image 
                 src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExdTVhbHk2aGo5aWdpZHM5d2s4ZXU2eGRzaWRrb3BsYWtrOWoyM2I4dyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/kNOHmVZB9eDNMXcjJT/giphy.gif"
@@ -51,6 +41,35 @@ export default function SplashScreen() {
             />
             <h1 className="text-4xl font-bold font-headline">Welcome!</h1>
         </div>
+      );
+    }
+    if (selectedRole === 'developer') {
+        return (
+          <div className="flex items-center justify-center text-center gap-4">
+              <Image 
+                  src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExcmt3azhiNmJta3B2bXhqNnpvZnp5NnIwZXB2dmdrcWM5YXFoaTllaCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/Bogi8LJADoFhbRBHqT/giphy.gif"
+                  alt="Developer Welcome GIF"
+                  width={300}
+                  height={300}
+                  unoptimized
+                  className="rounded-lg"
+              />
+              <h1 className="text-4xl font-bold font-headline">Welcome!</h1>
+          </div>
+        );
+    }
+    return null;
+  }
+
+  return (
+    <div
+      className={cn(
+        'fixed inset-0 z-[100] flex flex-col items-center justify-center bg-background transition-opacity duration-500 border-4 border-primary',
+        isFadingOut ? 'opacity-0' : 'opacity-100'
+      )}
+    >
+      {showWelcome ? (
+        renderWelcomeContent()
       ) : (
         <div className="text-center space-y-8 max-w-lg mx-auto p-4 animate-in fade-in duration-500">
           <Feather className="h-12 w-12 text-primary mx-auto" />
