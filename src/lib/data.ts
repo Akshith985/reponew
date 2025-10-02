@@ -35,27 +35,27 @@ export type BlogPost = {
 export const projects: Project[] = [
   {
     id: 1,
-    title: 'uottahack 6',
-    description: 'The sixth iteration of Ottawa\'s largest hackathon. I was a full-stack developer on the web team.',
+    title: 'Mental Health Wellness App',
+    description: 'A comprehensive wellness application designed to support mental health through guided meditations, mood tracking, and access to professional resources.',
     image: {
       id: 'project-1',
-      url: 'https://akshith.space/_next/image?url=%2Fprojects%2Fuottahack.png&w=1920&q=75',
-      hint: 'hackathon website'
+      url: 'https://picsum.photos/seed/mental-health-app/600/400',
+      hint: 'calm meditation'
     },
-    link: 'https://6.uottahack.com/',
-    tags: ['React', 'TypeScript', 'Firebase', 'GCP'],
+    link: '#',
+    tags: ['React Native', 'Node.js', 'MongoDB', 'Firebase'],
   },
   {
     id: 2,
-    title: 'Portfolio Website',
-    description: 'My personal portfolio website to showcase my projects and experiences.',
+    title: 'Hyperlocal Marketplace Aggregator',
+    description: 'An innovative platform that connects local buyers and sellers, aggregating various small-scale marketplaces into one seamless interface.',
     image: {
       id: 'project-2',
-      url: 'https://akshith.space/_next/image?url=%2Fprojects%2Fportfolio.png&w=1920&q=75',
-      hint: 'portfolio website'
+      url: 'https://picsum.photos/seed/marketplace-app/600/400',
+      hint: 'local market'
     },
-    link: 'https://akshith.space/',
-    tags: ['Next.js', 'Tailwind CSS', 'TypeScript'],
+    link: '#',
+    tags: ['Next.js', 'TypeScript', 'PostgreSQL', 'Docker'],
   },
 ];
 
