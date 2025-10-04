@@ -54,7 +54,7 @@ export const projects: Project[] = [
     description: 'A real-time stock market tracking application that allows users to monitor stock prices, view historical data, and manage their portfolio.',
     image: {
       id: 'project-2',
-      url: 'https://picsum.photos/seed/stock-market-app/600/400',
+      url: 'https://media.istockphoto.com/id/1487894858/photo/candlestick-chart-and-data-of-financial-market.jpg?s=612x612&w=0&k=20&c=wZ6vVmbm4BV2JOePSnNNz-0aFVOJZ0P9nhdeOMGUg5I=',
       hint: 'stock chart'
     },
     link: 'https://studio1-mu.vercel.app/',
