@@ -60,6 +60,9 @@ export default function Projects() {
             </Card>
           ))}
         </div>
+        <p className="text-center text-muted-foreground mt-12">
+          To view my other projects, feel free to reach out!
+        </p>
       </div>
     </section>
   );
