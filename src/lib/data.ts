@@ -41,7 +41,7 @@ export const projects: Project[] = [
     description: 'A comprehensive wellness application designed to support mental health through guided meditations, mood tracking, and access to professional resources.',
     image: {
       id: 'project-1',
-      url: 'https://picsum.photos/seed/mental-health-app/600/400',
+      url: 'https://t4.ftcdn.net/jpg/04/03/08/59/360_F_403085949_SUWR380UnjUFb3xXj2d3lowOdUaGr9F9.jpg',
       hint: 'calm meditation'
     },
     link: 'https://studio-lovat-kappa-36.vercel.app/',

@@ -1,3 +1,4 @@
+
 import type {NextConfig} from 'next';
 
 const nextConfig: NextConfig = {
@@ -43,6 +44,12 @@ const nextConfig: NextConfig = {
       {
         protocol: 'https',
         hostname: 'media.istockphoto.com',
+        port: '',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 't4.ftcdn.net',
         port: '',
         pathname: '/**',
       },
