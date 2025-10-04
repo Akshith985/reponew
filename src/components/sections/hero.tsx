@@ -1,3 +1,4 @@
+
 'use client';
 
 import Image from 'next/image';
@@ -75,7 +76,7 @@ export default function Hero() {
           <div className="space-y-2">
             <span className="text-primary font-semibold">Akshith</span>
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold font-headline">
-              Software Engineer & Content Creator
+              Web Developer and UI/UX Designer
             </h1>
           </div>
           {viewerType === 'recruiter' ? (
