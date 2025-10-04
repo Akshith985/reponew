@@ -50,14 +50,14 @@ export const projects: Project[] = [
   },
   {
     id: 2,
-    title: 'Hyperlocal Marketplace Aggregator',
-    description: 'An innovative platform that connects local buyers and sellers, aggregating various small-scale marketplaces into one seamless interface.',
+    title: 'Stock Market App',
+    description: 'A real-time stock market tracking application that allows users to monitor stock prices, view historical data, and manage their portfolio.',
     image: {
       id: 'project-2',
-      url: 'https://picsum.photos/seed/marketplace-app/600/400',
-      hint: 'local market'
+      url: 'https://picsum.photos/seed/stock-market-app/600/400',
+      hint: 'stock chart'
     },
-    link: '#',
+    link: 'https://studio1-mu.vercel.app/',
     githubLink: 'https://github.com/Akshith985',
     tags: ['Next.js', 'TypeScript', 'PostgreSQL', 'Docker'],
   },
